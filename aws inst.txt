@@ -1,0 +1,10 @@
+To log into your account:
+
+Log in to your AWS Certification Account
+On the homepage, click "Manage Pearson VUE Exams", you are taken to the Pearson VUE dashboard
+Click on your scheduled exam under "Purchased Online Exams"
+Click "Begin Exam" and follow the on-screen prompts to complete the check-in process
+Once you have completed the check-in process you will be contacted by a Proctor to begin your exam
+Please note that you are required to have a clean and clutter free workstation. During check in, the Proctor will ask you to perform a room and desk scan using your webcam and will inspect any materials near your workstation.
+
+AWF669331D51

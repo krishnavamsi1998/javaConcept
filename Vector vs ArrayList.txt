@@ -1,0 +1,7 @@
+ArrayList	                                  Vector
+ArrayList is not synchronized.	  Vector is synchronized.
+ArrayList increments 50% of       Vector increments 100% means doubles the array size
+the current array size 	 
+
+ArrayList is fast because it      Vector is slow because it is synchronized,i.e., in a multithreading environment, it holds the other threads in a
+is non-synchronized.	            runnable or non-runnable state ,until the current thread releases the lock of the object.

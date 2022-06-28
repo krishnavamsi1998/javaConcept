@@ -1,0 +1,6 @@
+How to create an immuable class?
+
+1.make fields private , final
+2.dont create setter methods
+3.make class as final using final keyword
+4.make deep copy of object

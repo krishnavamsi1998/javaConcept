@@ -1,0 +1,5 @@
+Peek() - It will give the head element of the queue. If queue is empty then it will return null.
+
+Poll() - It will give the head element of the queue and will remove the head element from queue. If queue is empty then it will return null.
+
+Remove() - It will give the head element of the queue and will remove the head element from queue. If queue is empty then it will throw an Exception.

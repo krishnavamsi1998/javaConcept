@@ -1,0 +1,12 @@
+final keyword in java is basically used for restriction
+
+It can be used for:
+
+varaible : cannot re-initialize it
+method : cannot override it
+class : cannot extend it
+
+we can initialize blank final varaible only through constructor
+
+
+

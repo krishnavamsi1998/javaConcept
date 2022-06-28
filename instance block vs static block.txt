@@ -1,0 +1,34 @@
+instance block 						              static block
+
+1.invoked when obj of the class is 		  1.invoked when the class is loaded
+created  
+
+2.multiple times invoked if multiple 	  2.invoked single time
+objs gets created 
+
+
+ex :
+
+class Main(){
+
+{
+sysout("instance block");
+}
+static
+{
+sysout("static block");
+}
+
+psvm(){
+
+Main obj=new Main();
+}
+
+}
+
+op
+
+static block
+instance block
+
+note : even when obj not created static block gets executed

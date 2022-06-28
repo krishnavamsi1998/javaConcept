@@ -1,0 +1,25 @@
+varaible length arguments are declared using  datatype...variableName
+it should be declared at the last position , if not comiplation error
+
+ex :
+public class VarArgs {
+	
+	private static int sum(int... a)
+	{
+		int s=0;
+		for(int i=0;i<a.length;i++)
+			s+=a[i];
+		return s;
+		
+	}
+
+	public static void main(String[] vamsi) {
+		
+		System.out.println(sum(2,3,4));//prints 9
+	}
+
+}
+
+//note args in main statement can be replaced by any its just the name of an array
+
+//note remaining syntax is must 

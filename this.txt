@@ -1,0 +1,121 @@
+this is a reference variable which refers to the current object
+
+1. used to avoid the ambguity between instance and local variables 
+
+if local variables i.e arguments/parameters have different name, then no need of this 
+
+example:
+
+//without this
+public class This {
+
+	String name;
+	int marks;
+
+	This(String name, int marks) {
+
+		name = name;
+		marks = marks;
+
+	}
+
+	void display() {
+
+		System.out.println(name + " " + marks);
+	}
+
+	public static void main(String[] args) {
+
+		This obj = new This("vamsi", 100);
+		obj.display();
+
+	}
+
+}
+op:
+null 0
+
+//without this
+public class This {
+
+	String name;
+	int marks;
+
+	This(String name, int marks) {
+
+		//name = name;
+		//marks = marks;
+		this.name=name;
+		this.marks=marks;
+
+	}
+
+	void display() {
+
+		System.out.println(name + " " + marks);
+	}
+
+	public static void main(String[] args) {
+
+		This obj = new This("vamsi", 100);
+		obj.display();
+
+	}
+
+}
+op
+vamsi 100
+
+
+2. to invoke current method
+
+
+class A{  
+void m(){System.out.println("hello m");}  
+void n(){  
+System.out.println("hello n");  
+//m();//same as this.m()  
+this.m();  
+}  
+}  
+class TestThis4{  
+public static void main(String args[]){  
+A a=new A();  
+a.n();  
+}}  
+
+3. to invoke suitable constructor 
+
+class A{  
+A(){System.out.println("hello a");}  
+A(int x){  
+this();  
+System.out.println(x);  
+}  
+}  
+class TestThis5{  
+public static void main(String args[]){  
+A a=new A(10);  
+}}  
+
+op
+hello a
+10
+
+4.to get current class instance
+
+class A{  
+A getA(){  
+return this;  
+}  
+void msg(){System.out.println("Hello java");}  
+}  
+class Test1{  
+public static void main(String args[]){  
+new A().getA().msg();  
+}  
+}  
+
+op
+
+Hello java

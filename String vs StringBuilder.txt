@@ -1,0 +1,142 @@
+1. Mutability
+
+A String is immutable in Java, while a StringBuilder is mutable in Java. An immutable object is an object whose content cannot be changed after it is created.
+
+When we try to concatenate two Java strings, a new String object is created in the string pool. This can be demonstrated by comparing HashCode for String object after every concat operation.
+
+class Main
+{
+    public static void main(String[] args)
+    {
+        String s = "AB";
+        System.out.println(s.hashCode());
+        s += "C";
+        System.out.println(s.hashCode());
+    }
+}
+Download  Run Code
+
+Output:
+
+2081
+64578
+
+ 
+As evident from the above code, a new hashcode is generated after concatenation, proving that a new String object is created with updated values and the old object was dereferenced.
+
+2. Equality
+We can use the equals() method for comparing two strings in Java since the String class overrides the equals() method of the Object class, while StringBuilder doesn’t override the equals() method of the Object class and hence equals() method cannot be used to compare two StringBuilder objects.
+
+class Main
+{
+    private static final String STR = "ABC";
+ 
+    public static void main(String[] args)
+    {
+        String s1 = new String(STR);
+        String s2 = new String(STR);
+        System.out.println(s1.equals(s2));
+ 
+        StringBuilder sb1 = new StringBuilder(STR);
+        StringBuilder sb2 = new StringBuilder(STR);
+        System.out.println(sb1.equals(sb2));
+    }
+}
+Download  Run Code
+
+Output:
+
+true
+false
+
+3. Comparable
+The String class implements the Comparable interface, while StringBuilder doesn’t. To illustrate, consider the following code, which throws ClassCastException since StringBuilder doesn’t provide any mechanism for string comparison.
+
+import java.util.Set;
+import java.util.TreeSet;
+ 
+class Main
+{
+    public static void main(String[] args)
+    {
+        Set<String> colors = new TreeSet<>();
+        colors.add(new String("Red"));
+        colors.add(new String("Blue"));
+        colors.add(new String("green"));
+ 
+        Set<StringBuilder> codes = new TreeSet<>();
+ 
+        try {
+            codes.add(new StringBuilder("#008200"));
+            codes.add(new StringBuilder("#ff0000"));
+            codes.add(new StringBuilder("#006400"));
+        }
+        catch (ClassCastException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+}
+Download  Run Code
+
+Output:
+
+java.lang.StringBuilder cannot be cast to java.lang.Comparable
+
+4. Constructor
+We can create a String object without using a new operator, which is not possible with a StringBuilder.
+
+String str = "abc";
+is equivalent to:
+
+char[] data = {'a', 'b', 'c'};
+String str = new String(data);
+5. Performance
+StringBuilder is speedy and consumes less memory than a string while performing concatenations. This is because string is immutable in Java, and concatenation of two string objects involves creating a new object.
+
+To illustrate, consider the following code, which logs the time taken by both string and StringBuilder objects on multiple concatenations.
+
+class Main
+{
+    private static final String STR = "A";
+ 
+    public static String stringConcatenation()
+    {
+        String s = STR;
+        for (int i = 0; i < Short.MAX_VALUE; i++) {
+            s = s + STR;
+        }
+        return s;
+    }
+ 
+    public static String stringBufferConcatenation()
+    {
+        StringBuilder sb = new StringBuilder(STR);
+        for (int i = 0; i < Short.MAX_VALUE; i++) {
+            sb.append(STR);
+        }
+        return sb.toString();
+    }
+ 
+    public static void main(String[] args)
+    {
+        long start = System.nanoTime();
+        stringConcatenation();
+        long end = System.nanoTime();
+ 
+        System.out.println("The time taken by string concatenation: "
+                        + (end - start) + "ns");
+ 
+        start = System.nanoTime();
+        stringBufferConcatenation();
+        end = System.nanoTime();
+ 
+        System.out.println("The time taken by StringBuilder concatenation: "
+                        + (end - start) + "ns");
+    }
+}
+Download  Run Code
+
+Output (will vary):
+
+The time taken by string concatenation: 504774386ns
+The time taken by StringBuilder concatenation: 1081315ns

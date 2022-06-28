@@ -1,0 +1,92 @@
+constructor should have same name as of the class name but may vary in 
+no of parameters it has
+
+we can call other constructor inside a constructor using this()
+
+based on no of parameters you specify in this() the control goes to the
+appropriate constructor
+
+ex:
+
+public class Constructors {
+	
+	Constructors(){
+		System.out.println("in default constructor");
+	}
+	
+	Constructors(String x){
+		System.out.println("in parameterized constructor "+x);
+		
+	}
+
+	public static void main(String[] args) {
+
+	Constructors obj=new Constructors();
+		//Constructors obj1=new Constructors("vamsi");
+		
+		
+	}
+
+}
+
+op :
+
+in default constructor
+
+
+ex 2:
+
+public class Constructors {
+	
+	Constructors(){
+		System.out.println("in default constructor");
+	}
+	
+	Constructors(String x){
+		System.out.println("in parameterized constructor "+x);
+		
+	}
+
+	public static void main(String[] args) {
+
+	//Constructors obj=new Constructors();
+		Constructors obj1=new Constructors("vamsi");
+		
+		
+	}
+
+}
+
+op:
+
+in parameterized constructor vamsi
+
+
+ex 3:
+
+public class Constructors {
+	
+	Constructors(){
+		System.out.println("in default constructor");
+	}
+	
+	Constructors(String x){
+		this();
+		System.out.println("in parameterized constructor "+x);
+		
+	}
+
+	public static void main(String[] args) {
+
+	//Constructors obj=new Constructors();
+		Constructors obj1=new Constructors("vamsi");
+		
+		
+	}
+
+}
+
+op:
+
+in default constructor
+in parameterized constructor vamsi
