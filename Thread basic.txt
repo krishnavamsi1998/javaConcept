@@ -1,0 +1,36 @@
+Whenever the Thread.sleep() methods execute, it always halts the execution of the current thread.
+
+Whenever another thread does interruption while the current thread is already in the sleep mode, then the InterruptedException is thrown.
+
+If the system that is executing the threads is busy, then the actual sleeping time of the thread is generally more as compared to the time passed in arguments. However, if the system executing the sleep() method has less load, then the actual sleeping time of the thread is almost equal to the time passed in the argument.
+
+ex:
+
+public class ThreadSleep1 extends Thread {
+
+	public void run() {
+		for (int i = 0; i < 5; i++) {
+			try {
+				Thread.sleep(3000);
+
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+			System.out.println(i);
+
+		}
+	}
+
+	public static void main(String[] args) {
+
+		ThreadSleep1 t1 = new ThreadSleep1();
+		ThreadSleep1 t2 = new ThreadSleep1();
+		t1.start();
+		// t2.start();
+
+	}
+	// op : prints 0 to 4 with gap of 3 seconds
+
+}
+
+
