@@ -4,6 +4,20 @@ Whenever another thread does interruption while the current thread is already in
 
 If the system that is executing the threads is busy, then the actual sleeping time of the thread is generally more as compared to the time passed in arguments. However, if the system executing the sleep() method has less load, then the actual sleeping time of the thread is almost equal to the time passed in the argument.
 
+The sleep() Method Syntax:
+Following are the syntax of the sleep() method.
+
+public static void sleep(long mls) throws InterruptedException   
+public static void sleep(long mls, int n) throws InterruptedException   
+
+The following are the parameters used in the sleep() method.
+
+mls: The time in milliseconds is represented by the parameter mls. The duration for which the thread will sleep is given by the method sleep().
+
+n: It shows the additional time up to which the programmer or developer wants the thread to be in the sleeping state. The range of n is from 0 to 999999.
+
+The method does not return anything.
+
 ex:
 
 public class ThreadSleep1 extends Thread {
