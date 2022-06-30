@@ -105,7 +105,8 @@ run() method called
 As we can see in the above example, calling run() method twice doesn’t raise any exception and it is executed twice as expected but on the main thread itself.
 
 Summary
-start()	run()
-Creates a new thread and the run() method is executed on the newly created thread.	No new thread is created and the run() method is executed on the calling thread itself.
+
+start()	                                                                                run()
+Creates a new thread and the run() method is executed on the newly created thread.	    No new thread is created and the run() method is                                                                                         executed on the calling thread itself.
 Can’t be invoked more than one time otherwise throws java.lang.IllegalStateException	Multiple invocation is possible
-Defined in java.lang.Thread class.	Defined in java.lang.Runnable interface and must be overriden in the implementing class.
+Defined in java.lang.Thread class.	                                                    Defined in java.lang.Runnable interface and must be                                                                                         overriden in the implementing class.
