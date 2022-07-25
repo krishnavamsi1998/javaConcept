@@ -1,0 +1,48 @@
+Every Java Programmer is familiar with NullPointerException. It can crash your code. 
+And it is very hard to avoid it without using too many null checks. 
+So, to overcome this, Java 8 has introduced a new class Optional in java.util package.
+ It can help in writing a neat code without using too many null checks
+
+By using Optional, we can specify alternate values to return or alternate code to run
+
+// Java program without Optional Class
+
+public class OptionalDemo {
+	public static void main(String[] args)
+	{
+		String[] words = new String[10];
+		String word = words[5].toLowerCase();
+		System.out.print(word);
+	}
+}
+
+Exception in thread "main" java.lang.NullPointerException
+
+
+To avoid abnormal termination, we use the Optional class. 
+In the following example, we are using Optional. So, our program can execute without crashing.
+
+// Java program with Optional Class
+
+import java.util.Optional;
+
+public class OptionalDemo {
+	public static void main(String[] args)
+	{
+		String[] words = new String[10];
+		Optional<String> checkNull
+			= Optional.ofNullable(words[5]);
+		if (checkNull.isPresent()) {
+			String word = words[5].toLowerCase();
+			System.out.print(word);
+		}
+		else
+			System.out.println("word is null");
+	}
+}
+
+word is null
+
+static methods of optional class
+
+empty , ofNullable
