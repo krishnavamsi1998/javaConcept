@@ -1,0 +1,38 @@
+No, we cannot override static methods because method overriding is based on dynamic binding at runtime and the static methods are bonded using static binding at compile time. So, we cannot override static methods.
+
+#Method hiding 
+Hiding: Parent class methods that are static are not part of a child class (although they are accessible), so there is no question of overriding it. Even if you add another static method in a subclass, identical to the one in its parent class, this subclass static method is unique and distinct from the static method in its parent class.
+
+example :
+
+public class OverloadStaticMethodExample3  
+{  
+public static void main(String args[])   
+{  
+ParentClass pc = new ChildClass();  
+//calling display() method by parent class object  
+pc.display();   
+}   
+}  
+//parent class  
+class ParentClass  
+{  
+//we cannot override the display() method  
+public static void display()  
+{  
+System.out.printf("display() method of the parent class.");  
+}  
+}  
+//child class  
+class ChildClass extends ParentClass  
+{  
+//the same method also exists in the ParentClass  
+//it does not override, actually it is method hiding  
+public static void display()  
+{  
+System.out.println("Overridden static method in Child Class in Java");  
+}  
+}  
+Output:
+
+display() method of the parent class.
