@@ -1,0 +1,30 @@
+Suppose that two threads are working on SharedObj.
+
+If two threads run on different processors each thread may have its own local copy of sharedVariable.
+
+If one thread modifies its value the change might not reflect in the original one in the main memory instantly
+
+class SharedObj
+{
+   // volatile keyword here makes sure that
+   // the changes made in one thread are 
+   // immediately reflect in other thread
+   static volatile int sharedVar = 6;
+}
+
+You can use the volatile keyword with variables. Using volatile keyword with classes and methods is illegal.
+
+It reduces the risk of memory consistency error.
+
+The volatile variables are always visible to other threads.
+
+When a variable is not shared between multiple threads, you do not need to use the volatile keyword with that variable.
+
+difference bw volatile and synchronized :
+
+	volatile					synchronized
+
+Volatile keyword is a field modifier.	Synchronized keyword modifies code blocks and methods.
+The thread cannot be blocked for 
+	waiting in case of volatile.	Threads can be blocked for waiting in case of synchronized.
+It improves thread performance.	Synchronized methods degrade the thread performance.
