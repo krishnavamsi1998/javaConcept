@@ -1,0 +1,5 @@
+Garbage Collection is good in Java, if we are executing Software coded in java in Desktop/laptop/server. You can call System.gc() or Runtime.getRuntime().gc() in Java.
+
+Just note that none of those calls are guaranteed to do anything. They are just a suggestion for the jvm to run the Garbage Collector. It's up the the JVM whether it runs the GC or not. So, short answer: we don't know when it runs. Longer answer: JVM would run gc if it has time for that.
+
+I believe, the same applies for Android. However, this might slow down your system.
