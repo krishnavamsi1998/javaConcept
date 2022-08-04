@@ -1,0 +1,9 @@
+37
+
+If you call System.exit() the program exits immediately without finally being called.
+
+A JVM Crash e.g. Segmentation Fault, will also prevent finally being called. i.e. the JVM stops immediately at this point and produces a crash report.
+
+An infinite loop would also prevent a finally being called.
+
+The finally block is always called when a Throwable is thrown. Even if you call Thread.stop() which triggers a ThreadDeath to be thrown in the target thread. This can be caught (it's an Error) and the finally block will be called.
