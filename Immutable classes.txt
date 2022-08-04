@@ -1,0 +1,36 @@
+22
+
+Immutable classes cannot be changed after construction. So, for example, a Java String is immutable.
+
+To make a class immutable, you have to make it final and all the fields private and final. For example the following class is immutable:
+
+public final class Person {
+
+     private final String name;
+     private final int age;
+     private final Collection<String> friends;
+
+     public Person(String name, int age, Collection<String> friends) {
+         this.name = name;
+         this.age = age;
+         this.friends = new ArrayList(friends);
+     }
+
+     public String getName() { 
+         return this.name;
+     }
+
+     public int getAge() {
+         return this.age;
+     }
+
+     public Collection<String> getFriends() {
+         return Collections.unmodifiableCollection(this.friends);
+     }
+}
+
+Some famous immutable classes in the Standard API:
+
+java.lang.String (already mentioned)
+The wrapper classes for the primitive types: java.lang.Integer, java.lang.Byte, java.lang.Character, java.lang.Short, java.lang.Boolean, java.lang.Long, java.lang.Double, java.lang.Float
+
