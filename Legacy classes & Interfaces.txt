@@ -1,0 +1,10 @@
+Early version of java did not include the Collections framework. It only defined several classes and interfaces that provide methods for storing objects. When Collections framework were added in J2SE 1.2, the original classes were reengineered to support the collection interface. These classes are also known as Legacy classes. All legacy classes and interface were redesign by JDK 5 to support Generics. In general, the legacy classes are supported because there is still some code that uses them.
+
+The following are the legacy classes defined by java.util package
+
+Dictionary
+HashTable
+Properties
+Stack
+Vector
+There is only one legacy interface called Enumeration
