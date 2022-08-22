@@ -1,0 +1,8 @@
+//Tight Coupling
+
+ArrayList<> list=new ArrayList<>();
+
+//Loose Coupling
+
+List<> list=new ArrayList<>();
+
