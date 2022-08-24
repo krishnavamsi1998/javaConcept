@@ -44,3 +44,5 @@ class GeeksforGeeks {
 Output:
 Current thread name: main
 run() method called
+
+Multiple invocation: In Java’s multi-threading concept, another most important difference between start() and run() method is that we can’t call the start() method twice otherwise it will throw an IllegalStateException whereas run() method can be called multiple times as it is just a normal method calling.
