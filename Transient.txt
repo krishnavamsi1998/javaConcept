@@ -1,0 +1,4 @@
+What is the Transient Keyword?
+The transient is a reserved keyword in Java. If you don’t want any data member to get serialized, you have to add the transient keyword. In the below program code, you will use the transient keyword to two data members and display all the data members’ values.
+
+As you can see, the transient data members return the default value, which is 0 for integers and null for strings.
