@@ -1,0 +1,65 @@
+Cloneable is an interface that is used to create the exact copy of an object. It exists in java.lang package. A class must implement the Cloneable interface if we want to create the clone of the class object.
+
+The clone() method of the Object class is used to create the clone of the object. However, if the class doesn't support the cloneable interface, then the clone() method generates the CloneNotSupportedException.
+
+The syntax of the clone() method is given below.
+
+protected Object clone() throws CloneNotSupportedException  
+We can also create a copy of an object by using the new keyword, but it will take a lot of processing time. Therefore, using the clone() method is efficient for this purpose. Consider the following example to create a copy of an object using the clone() method.
+
+// Java program to illustrate Cloneable interface
+import java.lang.Cloneable;
+
+// By implementing Cloneable interface
+// we make sure that instances of class A
+// can be cloned.
+class A implements Cloneable
+{
+	int i;
+	String s;
+
+	// A class constructor
+	public A(int i,String s)
+	{
+		this.i = i;
+		this.s = s;
+	}
+
+	// Overriding clone() method
+	// by simply calling Object class
+	// clone() method.
+	@Override
+	protected Object clone()
+	throws CloneNotSupportedException
+	{
+		return super.clone();
+	}
+}
+
+public class Test
+{
+	public static void main(String[] args)
+		throws CloneNotSupportedException
+	{
+		A a = new A(20, "GeeksForGeeks");
+
+		// cloning 'a' and holding
+		// new cloned object reference in b
+
+		// down-casting as clone() return type is Object
+		A b = (A)a.clone();
+
+		System.out.println(b.i);
+		System.out.println(b.s);
+	}
+}
+op:
+
+20
+GeeksForGeeks
+
+The default Object. clone() is indeed a shallow copy
+which means change by cloned object reflect in source object
+
+but when over ride ita acts as deep copy which means changes made does not reflect 
+
