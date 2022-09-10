@@ -1,0 +1,9 @@
+Assume Hashtable and ConcurrentHashMap are two types of Homes.
+Hashtable locks home's main door.
+ConcurrentHashMap locks specific room door instead of main door.
+
+Hashtable uses single lock for whole data. ConcurrentHashMap uses multiple locks on segment level (16 by default) instead of object level i.e. whole Map.
+
+ConcurrentHashMap allows concurrent read and thread-safe update operations. To perform read operation thread won’t require any lock but to perform update operation thread require a lock, but it is the lock of only a particular part of Map(Bucket level lock). 
+
+The value null is not allowed for both keys and values. While one thread is iterating the other thread can perform update operation and ConcurrentHashMap never throws  ConcurrentModificationException.
