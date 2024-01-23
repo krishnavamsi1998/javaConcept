@@ -1,0 +1,1 @@
+Java is not considered a pure object-oriented programming language. The main reason is it supports primitive type values. For an object-oriented programming language, data should be represented in the form of objects. As Java uses primitive data types, it is not considered a pure object-oriented programming language
